@@ -1,3 +1,8 @@
 .ok{
     color: blue;
 }
+.colors{
+    color: rgb(67, 14, 120);
+    font-family:'Courier New', Courier, monospace;
+    font-size: medium;
+}
