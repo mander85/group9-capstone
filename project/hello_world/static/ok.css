@@ -1,6 +1,10 @@
 .ok{
     color: blue;
 }
+.nadia_colors{
+    color: rgb(51, 169, 110);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .colors{
     color: rgb(67, 14, 120);
     font-family:'Courier New', Courier, monospace;
