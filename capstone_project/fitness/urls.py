@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 #URL name changes WILL affect navbar routing
+#url patterns use the functions in views.py 
 urlpatterns = [
     path('', views.home, name='fitness-home'),
     path('index/', views.home, name='fitness-home'),
