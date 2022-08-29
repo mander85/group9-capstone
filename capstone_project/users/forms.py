@@ -7,8 +7,8 @@ from django.contrib.auth.forms import UserCreationForm
 class UserSignupForm(UserCreationForm):
     email = forms.EmailField()
 
-    #Metadata class is a nested space for keeping configs in one place.
-    class Metadata: 
+    #Meta class is a nested space for keeping configs in one place.
+    class Meta: 
         #when this form validates it creates a new user - the model being affected
         model = User
         #what is shown on our form and the order they are shown in
