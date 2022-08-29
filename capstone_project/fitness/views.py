@@ -16,7 +16,11 @@ def leaderboard(request):
 def profile(request):
     return render(request, 'fitness/profile.html')
 
-def signinup(request):
-    return render(request, 'fitness/signinup.html')
+#These views were removed -- views are in the user file
+#def signin(request):
+   #return render(request, 'users/signin.html')
+
+#def signup(request):
+    #return render(request, 'users/signup.html')
 
     

@@ -40,17 +40,26 @@
                         </div>
                         <!-- Navbar Right Side -->
                         <div class="navbar-nav" >
-                            <a class="nav-item nav-link" href="{% url 'fitness-signinup' %}">Login</a>
-                            <a class="nav-item nav-link" href="{% url 'fitness-signinup' %}">Register</a>
+                            <a class="nav-item nav-link" href="{% url 'fitness-signin' %}">Login</a>
+                            <a class="nav-item nav-link" href="{% url 'fitness-signup' %}">Register</a>
                         </div>
                     </div>
                 </div>
             </nav>
         </header>
         
-          <!--Everything unique to a template will appear under this comment, where the block content tags are -->
+          
         <div class="container">
-             {% block content %}{% endblock %}
+            <!--ensures messages are displayed and have a bootstrap class according to alert type-->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <!--Everything unique to a template will appear under this comment, where the block content tags are -->
+            {% block content %}{% endblock %}
         </div>
        
         <!--Boostrap scripts !! Important for navbar and other built in CSS !!-->
