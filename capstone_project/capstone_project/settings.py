@@ -126,3 +126,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#new setting for login redirect
+LOGIN_REDIRECT_URL = 'fitness-home'
+
+#new login variable to allow login redirect when user is not logged in for workouts, leaderboard, and profile
+LOGIN_URL = 'fitness-signin'
