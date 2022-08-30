@@ -1,7 +1,30 @@
 <!--All duplicate code is located in the base.html file and extended here-->
 {% extends 'fitness/base.html' %}
 
+<!--allows bootstrap to be used on the forms -->
+{% load crispy_forms_tags %}
+
 <!--Any thing unique to this page must go in between the block content tags-->
 {% block content %}
-   
+   <div class="content-section">
+        <form method="POST">
+            <!--csrf (cross-site request forgery) token protects against attacks and required by django-->
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <!-- adding some quality of life css classes as well as some bootstrap-->
+                <legend class="border-bottom mb-4">Login here!</legend> 
+                {{ form|crispy }}
+
+            </fieldset>
+            <div class="form-group">
+                <button class="registerbutton" type="submit">Login</button>
+            </div>
+            <!--Allows a user with no account to go to the sign up page-->
+            <div>
+                <small class="text-muted">
+                    Don't have an account? <a class="ml-2" href="{% url 'fitness-signup' %}">Sign up here</a>
+                </small>
+            </div>
+        </form>
+   </div>
 {% endblock content %}
