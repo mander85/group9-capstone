@@ -73,5 +73,8 @@ p {
     border: 4px groove #000000;
     border-radius: 5px;
 }
+.leader_form{
+    text-align: center;
+}
 
 

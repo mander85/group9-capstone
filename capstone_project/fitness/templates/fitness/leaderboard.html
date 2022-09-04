@@ -1,20 +1,32 @@
 <!--All duplicate code is located in the base.html file and extended here-->
 {% extends 'fitness/base.html' %}
+{% load crispy_forms_tags %}
 
 <!--Any thing unique to this page must go in between the block content tags-->
 {% block content %}
-<!-- A table that generates with the content from the Leader_posts table in the database-->
-    <table class ="table">
-        <tr>
-            <td>User</td>
-            <td>Reps</td>
-        </tr>
-        <!-- for each entry in the db table, reps and submitter are posted in the table-->
-    {% for item in posts %}    
+<table class="table">
+    <tr>
+        <td>User</td>
+        <td>Reps</td>
+    </tr>
+     
+        {% for item in posts %}    
         <tr>
             <td>{{ item.submitter }} </td>
             <td>{{ item.reps }} </td>
         </tr> 
-    {% endfor %}  
-   </table>
+        {% endfor %} 
+
+   
+      
+    <div class="leader_form">
+        <h1> Enter your reps! </h1> 
+        <br/><br/>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type='submit' value='Submit' class="btn">
+        </form>
+    </div>
+   
 {% endblock content %}
