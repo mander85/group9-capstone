@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from .models import Leader_Post
+
 
 # Create your views here.
 
@@ -13,8 +15,11 @@ def workouts(request):
 
 @login_required
 def leaderboard(request):
-    return render(request, 'fitness/leaderboard.html')
-
+    #this posts sorts the table in high to low order by reps and returns it
+    posts=Leader_Post.objects.order_by('-reps')
+    context= {'posts': posts}
+    return render(request, 'fitness/leaderboard.html', context)
+  
 
 
 

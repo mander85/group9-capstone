@@ -69,5 +69,9 @@ p {
     font-size: medium;
     overflow-wrap: normal;
 }
+.table{
+    border: 4px groove #000000;
+    border-radius: 5px;
+}
 
 

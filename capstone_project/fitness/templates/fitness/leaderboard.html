@@ -3,5 +3,18 @@
 
 <!--Any thing unique to this page must go in between the block content tags-->
 {% block content %}
-   
+<!-- A table that generates with the content from the Leader_posts table in the database-->
+    <table class ="table">
+        <tr>
+            <td>User</td>
+            <td>Reps</td>
+        </tr>
+        <!-- for each entry in the db table, reps and submitter are posted in the table-->
+    {% for item in posts %}    
+        <tr>
+            <td>{{ item.submitter }} </td>
+            <td>{{ item.reps }} </td>
+        </tr> 
+    {% endfor %}  
+   </table>
 {% endblock content %}
