@@ -64,17 +64,35 @@ p {
 .registerbutton:hover{
     background-color: #94e0f1;
 }
+/* leaderboard submit form */
 .form-group{
     text-align: left;
     font-size: medium;
     overflow-wrap: normal;
 }
-.table{
-    border: 4px groove #000000;
-    border-radius: 5px;
-}
 .leader_form{
     text-align: center;
+    margin-bottom: 10px;
 }
 
+/* leaderboard table */
+.table{
+    border: 15px double #00a8f3;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: oblique;
 
+}
+.leaderboard_header{
+    background-color: #ffffff;
+    font-weight: bold;
+
+}
+.leaderboard_rows{
+    border: solid #000000;   
+}
+.leaderboard_rows:nth-child(even){
+    background-color: #94e0f1;
+}
+.leaderboard_rows:nth-child(odd){
+    background-color: #12b9df;
+}
