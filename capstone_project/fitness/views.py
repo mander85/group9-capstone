@@ -1,7 +1,7 @@
-from msilib.schema import ListView
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import  Leader_Post_bytime #,Leader_Post
+from .models import  Generator_Exercises, Leader_Post_bytime #,Leader_Post
 from .forms import LeaderboardForm_bytime #, LeaderboardForm
 from django.contrib import messages
 #from django.contrib.auth.models import User
@@ -15,7 +15,9 @@ def home(request):
 
 @login_required
 def workouts(request):
-    return render(request, 'fitness/workouts.html')
+    #Generates 10 random workouts from the table -- resource heavy method
+    workouts = Generator_Exercises.objects.order_by('?')[:10]
+    return render(request, 'fitness/workouts.html', {'workouts': workouts})
 
 @login_required
 def leaderboard(request):
@@ -37,7 +39,7 @@ def leaderboard(request):
             leaderpost = form.save(commit=False)
             leaderpost.submitter = request.user
             form.save()
-            messages.success(request, f'Time submitted!')
+            messages.success(request, f'Thanks { leaderpost.submitter }! Your time is submitted!')
             return redirect ('fitness-leaderboard')
         else:
             messages.warning(request, f'Please enter your time' )

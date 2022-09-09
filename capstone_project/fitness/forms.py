@@ -18,3 +18,6 @@ class LeaderboardForm_bytime(ModelForm):
         #the fields users can submit
         fields = ['time']
 
+
+
+
