@@ -4,36 +4,22 @@
 
 <!--Any thing unique to this page must go in between the block content tags-->
 {% block content %}
+{% load static %}
 
-<!--The leaderboard table that generates from database table-->
-
-<div>
-    <table class="table">
-        <tr class="leaderboard_header">
-            <td>Rank</td>
-            <td>User</td>
-            <td>Time</td>
-        </tr>
-            {% for item in posts %} 
-            <tr class="leaderboard_rows">
-                <!--This for loop counter adds the rank and makes sure the count does not restart on new page-->
-                <td>{{ forloop.counter0|add:posts.start_index }}</td>
-                <td>{{ item.submitter }} </td>
-                <td>{{ item.time }} minutes </td>
-            </tr> 
-            {% endfor %}
-</div>
+<!--A little placement podium graphic-->
+<img class="float-right" src="{% static 'images/podium.png' %}" alt="">
 
 <!--The submission form-->
     <div class="leader_form">
         <h1> Enter your time (in minutes)! </h1> 
-        <br/><br/>
+        <br/>
         <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <input type='submit' value='Submit' class="btn">
         </form>
     </div>
+
 <!--Pagination navigation-->
 {% if posts.has_other_pages %}
 <!-- Allows users to go to previous page-->
@@ -53,6 +39,24 @@
         <a class="btn btn-outline-info" href="?page={{ posts.next_page_number }}"> Next- </a>
     {% endif %}
 {% endif %}
+
+<!--The leaderboard table that generates from database table-->
+<div>
+    <table class="table">
+        <tr class="leaderboard_header">
+            <td>Rank</td>
+            <td>User</td>
+            <td>Time</td>
+        </tr>
+            {% for item in posts %} 
+            <tr class="leaderboard_rows">
+                <!--This for loop counter adds the rank and makes sure the count does not restart on new page-->
+                <td>{{ forloop.counter0|add:posts.start_index }}</td>
+                <td>{{ item.submitter }} </td>
+                <td>{{ item.time }} minutes </td>
+            </tr> 
+            {% endfor %}
+</div>
 
    
 {% endblock content %}
