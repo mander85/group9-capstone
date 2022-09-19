@@ -1,9 +1,15 @@
 <!--All duplicate code is located in the base.html file and extended here-->
 {% extends 'fitness/base.html' %}
-
+{% load crispy_forms_tags %}
 <!--Any thing unique to this page must go in between the block content tags-->
 {% block content %}
-
-<h1>{{ user.username }}</h1>
-   
+    <div class="content-section">
+        <div class="media">
+            <img class="rounded-circle" src="{{ user.profile.image.url }}">
+            <div class="media-body">
+                <h2 class="account-heading">{{ user.username }}</h2>
+                <p class="text-secondary">{{ user.email }}</p>
+            </div>
+        </div>
+   </div>
 {% endblock content %}
