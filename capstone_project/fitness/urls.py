@@ -1,4 +1,4 @@
-from re import template
+
 from django.urls import path
 from . import views
 #importing default django login/user views -- Rename the views when importing
@@ -17,4 +17,5 @@ urlpatterns = [
     path('signin/', auth_views.LoginView.as_view(template_name='users/signin.html'), name='fitness-signin' ),
     path('signout/', auth_views.LogoutView.as_view(template_name='users/signout.html'), name='fitness-signout' ),
     path('signup/', user_views.signup, name='fitness-signup' ),
+    path('password_reset/', user_views.change_password, name='password_reset' ),
 ]
