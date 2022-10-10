@@ -12,6 +12,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 #views allow for navigation across the webpage using the templates in capstone_project/fitness/templates
 def home(request):
     return render(request, 'fitness/index.html') 
+    
 
 @login_required
 def workouts(request):

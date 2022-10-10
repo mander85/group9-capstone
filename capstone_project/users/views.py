@@ -2,7 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserSignupForm
+from django.contrib.auth import update_session_auth_hash
+from .forms import UserSignupForm, PasswordChangeForm
 
 
 
@@ -33,7 +34,20 @@ def signup(request):
 def profile(request):
     return render(request, 'users/profile.html')
 
-#def signin(request):
-#    form = UserSignupForm()
-#    return render (request, 'users/signin.html', {'form': form})
-
+#The view to allow users to change their own password with current password
+def change_password(request):
+    if request.method == 'POST':
+        user = request.user
+        form = PasswordChangeForm(user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, "Your password has been updated!")
+            return redirect('password_reset')
+        else:
+            messages.error(request, 'Please correct the error')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'users/password_reset.html',
+        {'form':form}
+    )

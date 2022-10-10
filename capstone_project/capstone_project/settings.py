@@ -137,3 +137,6 @@ LOGIN_REDIRECT_URL = 'fitness-home'
 #new login variable to allow login redirect when user is not logged in for workouts, leaderboard, and profile
 LOGIN_URL = 'fitness-signin'
 
+
+
+
