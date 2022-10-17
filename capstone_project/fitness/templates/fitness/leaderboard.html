@@ -47,6 +47,7 @@
             <td>Rank</td>
             <td>User</td>
             <td>Time</td>
+            <td>Date Submitted</td>
         </tr>
             {% for item in posts %} 
             <tr class="leaderboard_rows">
@@ -54,6 +55,7 @@
                 <td>{{ forloop.counter0|add:posts.start_index }}</td>
                 <td>{{ item.submitter }} </td>
                 <td>{{ item.time }} minutes </td>
+                <td>{{ item.date_posted }}</td>
             </tr> 
             {% endfor %}
 </div>
