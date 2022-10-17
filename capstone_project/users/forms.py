@@ -14,9 +14,7 @@ class UserSignupForm(UserCreationForm):
         #what is shown on our form and the order they are shown in
         fields = ['username', 'email', 'password1', 'password2']
 
-#allows users to change their own password
-class UserPasswordChange(PasswordChangeForm):
-    pass
+
 
 
 
