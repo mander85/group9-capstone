@@ -3,24 +3,32 @@
 
 <!--Any thing unique to this page must go in between the block content tags-->
 {% block content %}
-
+{% load static %}
 
 </br>
+
+
+  
 <!--Generates a basic table with workouts, much like the leaderboard. Changes on page refresh-->
 <div >
     <table class="table table-sm">
+  
         <tr class="workout_header">
             <td>Workout</td>
             <td>How many</td>
+            <td><a href="{{ request.get_full_path }}" class="workout_button">New workout!</a></td> <!--Refreshes the page-->
         </tr>
             {% for item in workouts %}
             <tr class="workout_rows">
                 <td>{{ item.exercise_name  }}</td>
                 <td>{{ item.exercise_duration }} </td>
+                <td>
+                    <input type="checkbox"> Done!
+                </td>
             </tr> 
             {% endfor %}
          
 </div>
 
-   
+
 {% endblock content %}
