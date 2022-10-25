@@ -109,6 +109,22 @@ p {
     font-weight: bold;
 }
 .workout_rows{
-    border: solid #000000;
+   border: 3px #2c2c3f;
+  
+}
+.workout_rows:nth-child(even){
+    background-color: #94e0f1;
+}
+.workout_rows:nth-child(odd){
+    background-color: #12b9df;
 }
 
+.workout_button{
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: #00a8f3;
+    border: 2px groove #00a8f3;
+    border-radius: 12px;
+    text-align: center;
+}
