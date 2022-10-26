@@ -1,0 +1,145 @@
+/*Main Body and Page Style CSS*/
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color:#c3c3c3;
+    font-size: 25px;
+}
+body#indexpage{
+    text-align: center;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+/*Navigation Bar*/
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+}
+.navbar{
+    background-color: #00a8f3;
+    overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+}
+.navbar a{
+    float: center;
+    color: #000000;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 25px;
+    text-decoration: none;
+}
+.navbar a:hover{
+    background-color: #94e0f1;
+    color: #000000;
+    font-style: italic;
+    
+}
+/*other*/
+/*Register and login */
+.content-section{
+    padding: 10px 40px;
+    border: 8px groove #000000;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+}
+.registerbutton {
+    background-color: #00a8f3;
+    border-radius: 12px;
+}
+.registerbutton:hover{
+    background-color: #94e0f1;
+}
+
+/* leaderboard submit form */
+.form-group{
+    text-align: left;
+    font-size: medium;
+    overflow-wrap: normal;
+}
+.leader_form{
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+
+/* leaderboard table */
+.table{
+    border: 15px double #00a8f3;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: oblique;
+}
+.leaderboard_header{
+    background-color: #ffffff;
+    font-weight: bold;
+}
+.leaderboard_rows{
+    border: solid #000000;   
+}
+.leaderboard_rows:nth-child(even){
+    background-color: #94e0f1;
+}
+.leaderboard_rows:nth-child(odd){
+    background-color: #12b9df;
+}
+
+/* workout generator -- under construction */
+
+.table .workout_table{
+    border: 15px double #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: oblique;
+}
+.workout_header{
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+.workout_rows{
+   border: 3px #2c2c3f;
+  
+}
+.workout_rows:nth-child(even){
+    background-color: #94e0f1;
+}
+.workout_rows:nth-child(odd){
+    background-color: #12b9df;
+}
+
+.workout_button{
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: #00a8f3;
+    border: 2px groove #00a8f3;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
+.profile-content-section{
+    border: 10px double #00a8f3;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+}
+.profile-text{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: oblique;
+    font-style: oblique;
+}

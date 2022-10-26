@@ -1,0 +1,41 @@
+<!--All duplicate code is located in the base.html file and extended here-->
+{% extends 'fitness/base.html' %}
+{% load crispy_forms_tags %}
+<!--Any thing unique to this page must go in between the block content tags-->
+{% block content %}
+<!-- this is the edit page. the edit_profile and profile page need to switch links. -->
+<p></p>
+<center><h3 class="profile-text"><i>Edit {{ user.username }}'s Profile</i></h3></center>
+
+<div class="profile-content-section">
+<form method="POST" enctype="multipart/form-data">
+    <!--csrf (cross-site request forgery) token protects against attacks and required by django-->
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <!-- adding some quality of life css classes as well as some bootstrap-->
+            <legend class="border-bottom mb-4">Profile Info</legend> 
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="registerbutton" type="submit">Update</button>
+        </div>
+    </form>
+</div>
+</div>
+<p></p>
+    <small class="text-muted"><center>
+       Need to change your password? <a class="ml-2" href="{% url 'password_reset' %}">Reset Here</a>
+    </center></small>
+
+
+<br>
+<br>
+<br>
+
+
+<A><form action="{% url 'edit_profile' %}">
+    <input type="submit" value="Profile Page" />
+</form></A>
+
+{% endblock content %}
