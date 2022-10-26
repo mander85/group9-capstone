@@ -1,0 +1,74 @@
+<!--All duplicate code is located in the base.html file and extended here-->
+{% extends 'fitness/base.html' %}
+{% load crispy_forms_tags %}
+<!--Any thing unique to this page must go in between the block content tags-->
+{% block content %}
+<p></p>
+<p></p>
+    <div class="profile-content-section">
+        <div class="media">
+            <img class="rounded-circle account-img" src="{{ user.profile.image.url }}"  height="100" width="100">
+            <div class="media-body">
+                <h2 class="profile-text">{{ user.username }}</h2>
+                <p class="profile-text">{{ user.username }}</p>
+                <p class="profile-text">{{ user.email }}</p>
+            </div>
+            <br>
+            <div class="form-group">
+                <a class="registerbutton"><form action="{% url 'fitness-profile' %}"><input type="submit" value="Edit Profile" /></form></a>
+            </div>
+        </div>
+   </div>
+<p></p>
+<!-- <center><h3 class="profile-text"><i>Edit {{ user.username }}'s Profile</i></h3></center>
+ <br>
+    <h3 class="profile-text">Profile Picture</h3>
+    <div class="profile-content-section">
+        <div class="media">
+            <br>
+            <img class="rounded-circle account-img" src="{{ user.profile.image.url }}"  height="100" width="100">
+            <p class="profile-text"><input type="file" name="image" accept="image/*" id="id_image">
+                <br>
+                <br>
+                <a href="{{ user.profile.image.url }}">View Current Image</a><br>
+                </p>
+         </div>    
+    </div>     
+    <br>
+    <br>
+    <h3 class="profile-text">Perosnal Information</h3>   
+    <div class="profile-content-section">
+            <div class="media-body">
+                <h4 class="profile-text">Full name: {{ user.name}}</h4>
+                <p class="profile-text">Username: {{ user.username }}</p>
+                <p class="profile-text">Email: {{ user.email }}</p>
+                <a class="profile-text" href="{% url 'password_reset' %}">Change Password</a>
+            </div>
+        </div>
+   <br> -->
+
+   <!-- form here -->
+   <!-- <form method="POST" enctype="multipart/form-data">
+     csrf (cross-site request forgery) token protects against attacks and required by django
+        {% csrf_token %}
+        <fieldset class="form-group">
+             adding some quality of life css classes as well as some bootstrap
+            <legend class="border-bottom mb-4">Profile Info</legend> 
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="registerbutton" type="submit">Update Profile</button>
+        </div>
+    </form> -->
+
+
+   <!-- <div class="submit-row">
+    <input type="submit" value="Save" class="default" name="_save"> -->
+   <!-- <div class="form-group">
+        <a class="registerbutton"><form action="{% url 'fitness-profile' %}"><input type="submit" value="Cancel" /></form></a>
+    </div>
+   <div>
+<br> --> 
+
+{% endblock content %}

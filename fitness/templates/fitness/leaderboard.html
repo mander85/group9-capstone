@@ -1,0 +1,64 @@
+<!--All duplicate code is located in the base.html file and extended here-->
+{% extends 'fitness/base.html' %}
+
+
+<!--Any thing unique to this page must go in between the block content tags-->
+{% block content %}
+{% load static %}
+
+<!--A little placement podium graphic-->
+<img class="float-right" src="{% static 'images/podium.png' %}" alt="">
+
+<!--The submission form-->
+    <div class="leader_form">
+        <h1> Enter your time (in minutes)! </h1> 
+        <br/>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type='submit' value='Submit' class="btn">
+        </form>
+    </div>
+
+<!--Pagination navigation-->
+{% if posts.has_other_pages %}
+<!-- Allows users to go to previous page-->
+    {% if posts.has_previous %}
+        <a class="btn btn-outline-info" href="?page={{ posts.previous_page_number }}"> -Previous </a>
+    {% endif %}
+<!--Displays 3 pages worth of buttons-->
+    {% for pages in posts.paginator.page_range %}
+        {% if posts.number == pages %}
+            <a class="btn btn-info" href="?page={{ pages }}">{{ pages }}</a>
+        {% elif pages > posts.number|add:'-3' and pages < posts.number|add:'3'%}
+            <a class="btn btn-outline-info" href="?page={{ pages }}">{{ pages }}</a>
+        {% endif %}  
+    {% endfor %}
+<!--Allows users to go to next page-->
+    {% if posts.has_next %}
+        <a class="btn btn-outline-info" href="?page={{ posts.next_page_number }}"> Next- </a>
+    {% endif %}
+{% endif %}
+
+<!--The leaderboard table that generates from database table-->
+<div>
+    <table class="table">
+        <tr class="leaderboard_header">
+            <td>Rank</td>
+            <td>User</td>
+            <td>Time</td>
+            <td>Date Submitted</td>
+        </tr>
+            {% for item in posts %} 
+            <tr class="leaderboard_rows">
+                <!--This for loop counter adds the rank and makes sure the count does not restart on new page-->
+                <td>{{ forloop.counter0|add:posts.start_index }}</td>
+                <td>{{ item.submitter }} </td>
+                <td>{{ item.time }} minutes </td>
+                <td>{{ item.date_posted }}</td>
+            </tr> 
+            {% endfor %}
+</div>
+
+   
+{% endblock content %}
