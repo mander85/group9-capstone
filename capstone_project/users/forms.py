@@ -3,6 +3,7 @@ from socket import fromshare
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
+from .models import Profile
 
 class UserSignupForm(UserCreationForm):
     email = forms.EmailField()
@@ -14,7 +15,16 @@ class UserSignupForm(UserCreationForm):
         #what is shown on our form and the order they are shown in
         fields = ['username', 'email', 'password1', 'password2']
 
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField()
 
+    class Meta: 
+        #when this form validates it creates a new user - the model being affected
+        model = User
+        #what is shown on our form and the order they are shown in
+        fields = ['username', 'email']
 
-
-
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image']
