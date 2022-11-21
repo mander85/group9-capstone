@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-+=p-pl9-_=g%09e@^z11ka&288#!h2^a_-lu#_(bx2opc2*s5i
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Set debug to False for standard 404 page not found
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
