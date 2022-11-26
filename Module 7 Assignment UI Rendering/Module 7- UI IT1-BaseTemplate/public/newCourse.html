@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title> New Loan</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav nav--courses">
+        <a href="Module%207-%20UI%20IT1-BaseTemplate/public/loanList.html#" class="nav__el">All loans</a>
+        <form class="nav__search">
+          <button class="nav__search-btn"></button>
+          <input
+            type="text"
+            placeholder="Search loans"
+            class="nav__search-input"
+          />
+        </form>
+      </nav>
+      <div class="header__logo">
+        <img src="img/logo.png" alt="Course logo" />
+      </div>
+      <nav class="nav nav--user">
+        <a href="/Module%207-%20UI%20IT1-BaseTemplate/public/login.html" class="nav__el">My Loans</a>
+        <button class="nav__el">Log out</button>
+        <a href="" class="nav__el">
+          <img src="img/users/user.png" alt="User photo" class="nav__user-img" />
+          <span>Customer
+          </span>
+        </a>
+      </nav>
+    </header>
+    <!-- <section class="overview"> -->
+    <main class="main">
+      <div class="card-container">
+        <div class="card">
+          
+
+          <div class="card__details">
+            <h4 class="card__sub-heading">New Loan </h4>
+            <p class="card__text">
+              Please enter the following details
+            </p>
+            <div class="card__data">    
+              <form action="/newCourse">
+                <label for="cname">Loan ID:</label>
+                <input type="text" id="cname" name="cname"><br><br>
+                <label for="iname">Customer Name:</label>
+                <input type="text" id="lname" iname="iname"><br><br>
+                <label for="description">Loan Amount:</label>
+                <input type="description" id="description" name="description"><br><br>
+                <label for="credits">Loan Type:</label>
+                <input type="credits" id="credits" name="credits"><br><br>
+                <label for="startDate">Needed by:</label>
+                <input type="date" id="startDate" name="startDate"><br><br>
+                <input  class="card__sub-heading" type="submit" value="Submit">
+              </form>
+            </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <div class="footer">
+    <div class="footer__logo"><img src="img/logo.png" alt="Course logo"/></div>
+    <ul class="footer__nav">
+      <li:a href="#">About us</li:a>
+      <li:a href="#">Download Course information)</li:a>
+      <li:a href="#">Sign up for the Course</li:a>
+      <li:a href="#">Careers</li:a>
+      <li:a href="#">Contact</li:a>
+    </ul>
+    <p class="footer__copyright">&copy; by Student Learners.</p>
+  </div>
+</html>
+
+</html>
